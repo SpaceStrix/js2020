@@ -1,4 +1,4 @@
-// Числа. Задачи.
+// TODO:Числа. Задачи.
 // 1. Получить число pi из Math и округлить его до 2-х знаков после точки
 
 let num = Math.PI.toFixed(2);
@@ -205,13 +205,48 @@ console.log(tern);
 /* =============================// Основы. Тернарный оператор. Switch Case.============================= */
 
 // Основы. Циклы.
-// 1. На основе строки “i am in the easycode” сделать новую строку где первые буквы каждого слова будут в верхнем регистре. Использовать for или while.
+// TODO:1. На основе строки “i am in the easycode” сделать новую строку где первые буквы каждого слова будут в верхнем регистре. Использовать for или while.
 
 let strC = "i am in the easycode";
 let newStrC = "";
-for (let i = 0; i < strC.length - 1; i++) {
-  newStrC += strC[i].toUpperCase();
+for (let i = 0; i < strC.length; i++) {
+  if (i == 0) {
+    newStrC += strC[i].toUpperCase();
+  } else if (strC[i - 1] == " ") {
+    newStrC += strC[i].toUpperCase();
+  } else {
+    newStrC += strC[i];
+  }
 }
 console.log(newStrC);
 
+// 2. Дана строка “tseb eht ma i”. Используя циклы, сделать строку-перевертыш (то есть последняя буква становится первой, предпоследняя - второй итд).
+
+let strRev = "tseb eht ma i";
+let strRevNew = "";
+for (let i = strRev.length; i > 0; i--) {
+  strRevNew += strRev[i - 1];
+}
+console.log(strRevNew);
+
+// 3. Факториал числа - произведение всех натуральных чисел от 1 до n включительно: 3! = 3*2*1, 5! = 5*4*3*2*1. С помощью циклов вычислить факториал числа 10. Использовать for.
+
+let numFa = 1;
+for (let i = 1; i < 10; i++) {
+  numFa *= i;
+}
+console.log(numFa);
+
+// 4. На основе строки “JavaScript is a pretty good language” сделать новую строку, где каждое слово начинается с большой буквы, а пробелы удалены. Использовать for.
+
+let strMain = "javaScript is a pretty good language";
+let strMainNew = "";
+for (let i = 0; i < strMain.length; i++) {
+  if (strMain[i - 1] === " " || i === 0) {
+    strMainNew += strMain[i].toUpperCase();
+  } else if (strMain[i] !== " ") {
+    strMainNew += strMain[i];
+  }
+}
+console.log(strMainNew);
 /* =============================// Основы. Циклы.============================= */
