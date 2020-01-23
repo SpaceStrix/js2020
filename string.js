@@ -25,3 +25,11 @@ const a = 20;
 const b = 20;
 const c = String(a) + String(b);
 console.log(`Строка: ${c}`);
+
+const sum = (...params) => {
+  if (arams.length == null) return 0;
+  return params.reduce((prev, next) => prev + next);
+};
+
+console.log(sum(1, 2, 3, 4, 12));
+console.log(sum());
