@@ -1,19 +1,13 @@
 // У строки есть свойтво 'str.length' - это длина строки. С помощью (str[0] можно узнать какой элемент строки находится под данным индексом)
 // Существует 3 метода поиска подстроки: str.slice(), str.substr(), str.substring()
 
-const str = "Lorem ipsum dolor";
+const str = 'Lorem ipsum dolor';
 // 1,2.
-console.log(
-  `${str[0].toUpperCase()}${str.slice(1, -1)}${str[
-    str.length - 1
-  ].toUpperCase()}`
-);
+console.log(`${str[0].toUpperCase()}${str.slice(1, -1)}${str[str.length - 1].toUpperCase()}`);
 // 3.
-console.log(`Начинается с: ${str.indexOf("dolor")} индекса`);
+console.log(`Начинается с: ${str.indexOf('dolor')} индекса`);
 // 4.
-console.log(
-  `Положение 2-го пробела: ${str.indexOf(" ", str.indexOf(" ") + 1)}`
-);
+console.log(`Положение 2-го пробела: ${str.indexOf(' ', str.indexOf(' ') + 1)}`);
 // 5.
 console.log(`6 символов: ${str.substr(2, 6)}`);
 // 6.
@@ -25,11 +19,3 @@ const a = 20;
 const b = 20;
 const c = String(a) + String(b);
 console.log(`Строка: ${c}`);
-
-const sum = (...params) => {
-  if (arams.length == null) return 0;
-  return params.reduce((prev, next) => prev + next);
-};
-
-console.log(sum(1, 2, 3, 4, 12));
-console.log(sum());

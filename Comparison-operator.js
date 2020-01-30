@@ -29,68 +29,97 @@ true + undefined   // NAN
 */
 
 // 1
-let a = "hidden";
-if (a === "hidden") {
-  a = "visible";
+let a = 'hidden';
+if (a === 'hidden') {
+	a = 'visible';
 } else {
-  a = "hidden";
+	a = 'hidden';
 }
 console.log(a);
 // 2
 let b = 2;
 if (b === 0) {
-  b = 1;
+	b = 1;
 } else if (b < 0) {
-  b = "less then zero";
+	b = 'less then zero';
 } else {
-  b *= 10;
+	b *= 10;
 }
 
 console.log(b);
 
 // 3
 let car = {
-  name: "Lexus",
-  age: 22,
-  create: 2008,
-  needRepair: false
+	name: 'Lexus',
+	age: 22,
+	create: 2008,
+	needRepair: false
 };
 
 if (car.age > 5) {
-  console.log("Need Repair");
-  car.needRepair = true;
+	console.log('Need Repair');
+	car.needRepair = true;
 } else {
-  car.needRepair;
+	car.needRepair;
 }
 console.log(car);
 
 // 4
 let item = {
-  name: "Intel core i7",
-  price: "100$",
-  discount: "15%"
+	name: 'Intel core i7',
+	price: '100$',
+	discount: '15%'
 };
 
 if (item.discount !== undefined) {
-  item.priceWithDiscount =
-    parseInt(item.price) -
-    parseInt(item.price) * (parseInt(item.discount) / 100);
-  console.log(`Со скидкой ${item.priceWithDiscount}$`);
+	item.priceWithDiscount = parseInt(item.price) - parseInt(item.price) * (parseInt(item.discount) / 100);
+	console.log(`Со скидкой ${item.priceWithDiscount}$`);
 } else {
-  console.log(`Без скидки ${item.price}`);
+	console.log(`Без скидки ${item.price}`);
 }
 
 // 5
 let product = {
-  name: "Яблоко",
-  price: "10$"
+	name: 'Яблоко',
+	price: '10$'
 };
 
 let min = 10; // минимальная цена
 let max = 20; // максимальная цена
 
 if (parseInt(product.price) >= min && parseInt(product.price) <= max) {
-  console.log(product.name);
+	console.log(product.name);
 } else {
-  console.log("Товар не найден");
+	console.log('Товар не найден');
 }
+
+// Тернарный оператор. Switch case. Задачи.
+
+// 1.
+
+let swCase = 'block';
+switch (swCase) {
+	case 'block':
+		console.log('block');
+		break;
+	case 'inline':
+		console.log('inline');
+		break;
+	case 'none':
+		console.log('none');
+		break;
+	case 'other':
+		console.log('other');
+		break;
+	default:
+		break;
+}
+// 2.
+let to = 'hidden';
+to == 'hidden' ? 'visable' : 'hidden';
+console.log(to);
+
+// 3.
+let t = 2;
+t == 0 ? 1 : t < 0 ? 'less this null' : (t *= 10);
+console.log(t);
