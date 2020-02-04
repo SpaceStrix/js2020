@@ -110,7 +110,7 @@ console.log(resFn);
 
 //////// Функции высшего порядка.
 
-function firstFn(arr, fn) {
+/* function firstFn(arr, fn) {
   let emptyArray = "";
   for (let i = 0; i < arr.length; i++) {
     emptyArray += fn(arr[i]);
@@ -167,4 +167,6 @@ function callbackFn(item) {
   return item > 5;
 }
 
-console.log(every(arrayNum, callbackFn));
+console.log(every(arrayNum, callbackFn)); */
+
+// --------------------------
