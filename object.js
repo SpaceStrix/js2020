@@ -57,16 +57,45 @@ console.log(user === userSecond); false // они не равны друг др�
 // delete obj.product;
 //console.log(obj);
 
-let objPro = {
-  age: 25,
-  arrayFirstName: ["Kay", "Lens", "Popo"],
-  lastName: "Smith"
+/* -------------------------------- Медоты объектов -------------------------------- */
+
+const obj = {
+  isActive: false,
+  balance: 2397.64,
+  age: 39,
+  name: "Lucile Finley",
+  gender: "female",
+  company: "ZOXY",
+  email: "lucilefinley@zoxy.com",
+  phone: "+1 (842) 566-3328",
+  arr: {
+    value: [2, 3, 2]
+  }
 };
 
-if (objPro.gender === undefined) {
-  objPro.firsName = "Dima";
-} else {
-  objPro.firsName = "Dima";
-}
-console.log(objPro.firsName);
-console.log(objPro.arrayFirstName[1]);
+//console.log(obj);
+//  Object.assign({}, obj) - Метод не глубокого копирования объекта. В качестве первого аргумента принимает пустой обект {} куда и будет копиваться второй и последующие аргументы т.е объекты который мы хотим скопировать в новый объект. Данный метод не может скопировать объект в виде ключа.
+let objAssign = Object.assign({}, obj);
+console.log(objAssign);
+console.log(objAssign.arr === obj.arr); // true
+
+// JSON(stringify(obj)) - В качестве аргумента так же принимает объект, в результате получаем строку на JSON, далее нам нужно вернуть обект с помощью JSON.parse() вкачестве аргумента он примет JSON(stringify(obj)) в результа получим объект скопированный с помощью глубокого копирования.
+let objJSON = JSON.parse(JSON.stringify(obj));
+console.log(objJSON);
+console.log(objJSON.arr === obj.arr); // false
+// Object.keys(obj) - Возвраает массив ключей объекта. Далее можем работать как с обычным массивом.
+let objKeys = Object.keys(obj);
+console.log(objKeys);
+// Object.keys(obj) - Возвраает массив значений ключей. Далее можем работать как с обычным массивом.
+let objValues = Object.values(obj);
+console.log(objValues);
+//  Object.entries() - Возвращает массив массивов, где парами являются ключ:значение.
+let objEntries = Object.entries(obj);
+console.log(objEntries);
+// Object.fromEntries() - Возвращает объект в котором ключем является первое значение массива, а значением ключа второе значение массива.
+let objFromEntries = Object.fromEntries([
+  ["a", "value"],
+  ["b", "b_value"],
+  ["c", "c_alue"]
+]);
+console.log(objFromEntries);

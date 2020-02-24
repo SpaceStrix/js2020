@@ -1,17 +1,9 @@
 body {
-  background: #de6262; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffb88c,
-    #de6262
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ffb88c,
-    #de6262
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   color: #ffffff;
+  animation-duration: 3s;
+  animation-name: shadow;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
 }
 .container {
   max-width: 1180px;
@@ -27,4 +19,19 @@ p {
   background: #fff;
   border-radius: 5px;
   text-align: center;
+}
+
+@keyframes shadow {
+  from {
+    background: #4b6cb7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+  }
+  50% {
+    background: #226079; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #66337e, #9f44b1);
+  }
+  to {
+    background: #4b6cb7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);
+  }
 }
