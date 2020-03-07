@@ -43,19 +43,19 @@ function fnRest(a, ...other) {
 console.log(fnRest("a", "b", "c", "d"));
 
 const organisation = {
-  name: "",
+  name: "Denis",
   info: {
     employees: ["Vlad", "Olga"],
     partners: ["Microsoft", "Facebook", "Xing"]
   }
 };
 
-function getInfo({
-  name = "Unknown",
+function getOrganisation({
+  name = "Default",
   info: {
-    partners: [p1, p2]
+    partners: [partners1, partners2]
   }
 } = {}) {
-  console.log(name, p1, p2);
+  return console.log(name, partners1, partners2);
 }
-getInfo(organisation);
+getOrganisation(organisation);

@@ -19,6 +19,7 @@ p {
   background: #fff;
   border-radius: 5px;
   text-align: center;
+  margin: 8px;
 }
 
 @keyframes shadow {
