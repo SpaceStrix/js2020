@@ -18,8 +18,14 @@ p {
   color: #000000;
   background: #fff;
   border-radius: 5px;
-  text-align: center;
+  /*  text-align: center; */
   margin: 8px;
+}
+ul li {
+  list-style: none;
+}
+a {
+  color: #000000;
 }
 
 @keyframes shadow {
