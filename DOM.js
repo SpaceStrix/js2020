@@ -97,12 +97,12 @@ title.appendChild(span); // appendChild - добавляет span внутрь �
 // console.log(span);
 
 /* 
-Свойства. Задачи. 
+---------------------- Свойства. Задачи. ----------------------
 */
 
 // 1. Найти параграф и получить его текстовое содержимое (только текст!)
-const paragraph = document.querySelector("p");
-console.log(paragraph.textContent);
+// const paragraph = document.querySelector("p");
+//console.log(paragraph.textContent);
 
 // 2. Создать функцию, которая принимает в качестве аргумента узел DOM и возвращает информацию (в виде объекта) о типе узла, об имени узла и о количестве дочерних узлов (если детей нет - 0).
 
@@ -110,13 +110,54 @@ function getTypeNode(ul) {
   return {
     NodeType: ul.nodeType,
     NodeName: ul.nodeName,
-    NodeChild: ul.childNodes.length
+    NodeChild: ul.children.length
   };
 }
-console.dir(getTypeNode(ul));
+//console.dir(getTypeNode(ul));
 
 // 3. Получить массив, который состоит из текстового содержимого ссылок внутри списка: getTextFromUl(ul) ---> ["Link1", "Link2", "Link3"]
 
 let ulChildren = document.querySelector("ul").children;
-let arr = [...ulChildren].map(elem => elem.textContent);
+let arr = Array.from(ulChildren).map(elem => elem.textContent);
 console.log(arr);
+
+// 4. В параграфе заменить все дочерние текстовые узлы на “-text-” (вложенные теги должны остаться). Конечный результат:
+// -text-<a href="#">reprehendunt</a>-text-<mark>nemore</mark>-text-
+const paragraph = document.querySelector("p");
+/* function returnText(text) {
+  let replaceText = text.childNodes;
+  for (let i = 0; i < replaceText.length; i++) {
+    if (replaceText[i].nodeName === "#text") {
+      replaceText[i].textContent = "-text-";
+    }
+  }
+  return replaceText;
+}
+returnText(paragraph); */
+
+let makeArray = Array.from(paragraph.childNodes);
+let replaceText = makeArray.forEach(text => {
+  if (text.nodeName === "#text") {
+    return (text.textContent = "-TEXT-");
+  }
+});
+
+// 1. Найти в коде список ul и добавить класс “list”
+ul.classList.add("list");
+// 2. Найти в коде ссылку, находящуюся после списка ul, и добавить id=link
+const idLink = ul.nextElementSibling.nextElementSibling;
+idLink.setAttribute("id", "link");
+// 3. На li через один (начиная с самого первого) установить класс “item”
+//const ulChild = ul.children;
+
+let met = Array.from(document.querySelectorAll("li"));
+met.forEach((item, i) => {
+  if (i % 2 == 0) {
+    return met[i].classList.add("items");
+  }
+});
+
+const allLink = document.querySelectorAll("a");
+allLink.forEach(link => {
+  link.classList.add("custom-link");
+});
